@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
 import { faComments } from '@fortawesome/free-solid-svg-icons';
-import { Card, CardContent, Typography } from "@material-ui/core";
 import { QRCode } from "react-qr-code";
 
 const UserProfileEdit = () => {
@@ -88,9 +87,9 @@ const UserProfileEdit = () => {
                                 <h1 className="title" style={{ color: "#cf0000" }}>Changer Votre Mot de Passe</h1>
                             </div>
                         </div>
-                       
-                        <Card style={{ width: "100%" }}>
-                            <CardContent>
+                        
+                        <div className="card" style={{ width: "100%" }}>
+                            <div className="card-body">
                                 <div className="input-div pass">
                                     <div className="i">
                                         <i className="fas fa-lock"></i>
@@ -105,10 +104,10 @@ const UserProfileEdit = () => {
                                         />
                                     </div>
                                 </div>
-                            </CardContent>
-                        </Card>
-                        <Card style={{ width: "100%" }}>
-                            <CardContent>
+                            </div>
+                        </div>
+                        <div className="card" style={{ width: "100%" }}>
+                        <div className="card-body">
                                 <div className="input-div pass">
                                     <div className="i">
                                         <i className="fas fa-lock"></i>
@@ -123,8 +122,8 @@ const UserProfileEdit = () => {
                                         />
                                     </div>
                                 </div>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </div>
                         <button
     type="submit"
     className="btn btn-primary"
@@ -190,11 +189,10 @@ const UserProfileEdit = () => {
                                     transform: "translate(-50%, -50%)",
                                 }}
                             >
-                                <Card style={{ maxWidth: "300px" }}>
-                                    <CardContent>
-                                        <Typography variant="h5" component="h2">
+                                <div className="card" style={{ maxWidth: "300px" }}>
+                                <div className="card-body">                                  <label variant="h5" component="h2">
                                             Profile Image
-                                        </Typography>
+                                        </label>
                                         <img
                                             src={userInfo && userInfo.pic }
                                             alt="Profile"
@@ -205,8 +203,8 @@ const UserProfileEdit = () => {
                                             }}
                                         />
                                         <button onClick={handleCloseCard}>Close</button>
-                                    </CardContent>
-                                </Card>
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </form>
