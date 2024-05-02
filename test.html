@@ -1,0 +1,56 @@
+const transporter = nodemailer.createTransport({
+	service: "gmail",
+	auth: {
+		user: GMAIL_USER,
+		pass: GMAIL_PSW,
+	},
+});
+let info = await transporter.sendMail({
+	from: GMAIL_USER,
+	to: candidat.email,
+	subject: `Invitation pour passer un test technique`,
+	html: `	<body>
+ <table width="100%">
+	<tr>
+		<td style="padding: 20px 0; background-color: #000000">
+			<a
+				target="_blank"
+				style="
+					text-decoration: none;
+					color: #fff;
+					display: flex;
+					align-items: start;
+					justify-content: start;
+				"
+			>
+				<img src="https://i.postimg.cc/qR5fh0QH/logo-network.png"
+				width="70px" height="70px" alt="Esprit Network auto" style="display:
+				block; border: 0 ; padding: 10px;" />
+				<h1>Esprit Network</h1>
+			</a>
+		</td>
+	</tr>
+	<tr style="background: #fff">
+		<td style="padding: 20px">
+			<p style="margin: 2; font-size: 14px; color: #000000">
+				Bonjour ${candidat.name},<br /><br />
+				Suite à votre candidature vous avez été présélectionné pour
+				passer un <strong>Test Technique  en ligne</strong>.<br />
+				Veuillez connecter à votre espace candidat pour passer le test. <br />
+				Le test est composé de questions à choix unique  , pour plus d'information consulter votre espace  dans la rebrique <strong>Evaluation</strong> <br />
+				<br />	<br />
+				Bonne chance!<br /><br />
+				L’équipe Esprit Network
+			</p>
+		</td>
+	</tr>
+</table>
+		   </body>`,
+});
+if (info) {
+	console.log(info);
+	return true;
+} else {
+	console.log("err");
+	return false;
+}
