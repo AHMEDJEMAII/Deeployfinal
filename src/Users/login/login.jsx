@@ -5,8 +5,6 @@ import { login } from "../../Redux/Actions/userActions";
 import Message from "../../LoadingError/Error";
 import Loading from "../../LoadingError/Loading";
 import "./LoginPage.css";
-import ReCAPTCHA from "react-google-recaptcha";
-import { Button } from "@chakra-ui/react";
 import { useSearchParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -117,24 +115,9 @@ export const Login = () => {
 								/>
 							</div>
 						</div>
-						<ReCAPTCHA
-							sitekey="6LcF_4opAAAAABC5dxW3EiH2FobRpLOUkYD2hvwS"
-							onChange={onChange}
-						/>
+					
 						<input type="submit" className="bttn" value="Connexion" />
-						<Button
-							leftIcon={
-								<img
-									src="https://i.postimg.cc/fLNq3jdv/icons8-logo-google-240.png"
-									alt="Google Icon"
-									style={{ width: "24px", height: "24px" }}
-								/>
-							}
-							onClick={redirectToGoogleAuth}
-							bg="#F7F7F7"
-							className="btn btn-outline-secondary"
-						>
-Connexion avec Google						</Button>
+						
 						<br />
 						<br />
 						<div style={{ display: "flex", justifyContent: "space-between" }}>
